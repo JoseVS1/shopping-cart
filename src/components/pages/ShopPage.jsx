@@ -15,10 +15,10 @@ export const ShopPage = () => {
         getAllProducts()
     }, [])
   return (
-    <>
+    <div className='cards-container'>
         {products.map(p => {
             return <ProductCard key={p.id} product={p} />
         })}
-    </>
+    </div>
   )
 }
