@@ -2,7 +2,7 @@ import React from 'react'
 
 export const ProductCard = ({product}) => {
   return (
-    <div>
+    <div className='card'>
         <h2>{product.title}</h2>
         <img src={product.image} alt={product.title} />
         <p>{product.description}</p>
@@ -12,7 +12,7 @@ export const ProductCard = ({product}) => {
             <span>0</span>
             <button>+</button>
         </div>
-        
+
         <button>Add</button>
     </div>
   )
