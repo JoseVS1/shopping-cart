@@ -18,17 +18,11 @@ html, body {
   border: 1px solid black;
   height: 60rem;
   width: 40rem;
+  margin-bottom: 4rem;
 }
 
 .card img {
   width: 50%;
-}
-
-/* SHOP PAGE */
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* NAVBAR */
@@ -94,6 +88,15 @@ nav li > *:hover {
 }
 
 .shop-link:active {
-  transform: translateY(2px); /* Moves the button down */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduces shadow for pressed effect */ /* Darker blue */
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* SHOP PAGE */
+
+.cards-container {
+  padding: 4rem 10rem 0 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
