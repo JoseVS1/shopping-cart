@@ -75,17 +75,18 @@ html, body {
 
 nav ul {
   display: flex;
-  justify-content: space-around;
   margin: 0;
   height: 10rem;
   align-items: center;
   list-style: none;
+  padding: 0 9rem;
+  justify-content: space-between;
 }
 
 nav {
   height: 10rem;
   background-color: #5465FF;
-  padding: 0 60rem;
+  padding: 0 2rem;
   font-size: 3rem;
   font-weight: bold;
 }
@@ -97,6 +98,14 @@ nav li > * {
 
 nav li > *:hover {
   color: rgb(220, 218, 218);
+}
+
+.cart-link {
+  margin-left: 135rem;
+}
+
+.cart-count {
+  font-size: 2rem;
 }
 
 /* HOME PAGE */

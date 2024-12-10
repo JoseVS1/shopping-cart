@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router-dom';
 export const ProductCard = ({product}) => {
   const [quantity, setQuantity] = useState(0);
 
-  const {setCartProducts} = useOutletContext();
+  const {cartProducts, setCartProducts} = useOutletContext();
 
   const incrementQuantity = () => {
     setQuantity(quantity + 1);
@@ -17,16 +17,21 @@ export const ProductCard = ({product}) => {
   }
   
   const addToCart = () => {
-    if (quantity === 0) return;
+    if (quantity === 0 || cartProducts.includes(product)) return;
 
-    setCartProducts(prev => {
-      const cartProduct = {
-        ...product,
-        quantity: quantity
-      }
+    const result = cartProducts.filter(x => x.id === product.id).length;
 
-      return [...prev, cartProduct]
-    })
+    const cartProduct = {
+      ...product,
+      quantity: quantity
+    }
+
+    if (!result) {
+      setCartProducts(prev => {
+        return [...prev, cartProduct]
+      })
+    }
+    
   }
 
   return (
