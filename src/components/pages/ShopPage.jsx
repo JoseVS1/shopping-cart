@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { ProductCard } from '../ProductCard';
+import { useOutletContext } from 'react-router-dom';
 
 export const ShopPage = () => {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const getAllProducts = async () => {
-            const response = await fetch("https://fakestoreapi.com/products");
-            const data = await response.json();
-
-            setProducts(data);
-        }
-
-        getAllProducts()
-    }, [])
+    const {products} = useOutletContext();
+    
   return (
     <div className='cards-container'>
         {products.map(p => {
