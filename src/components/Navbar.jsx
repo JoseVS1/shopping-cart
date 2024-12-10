@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Navbar = () => {
+export const Navbar = ({cartProducts}) => {
   return (
     <>
         <nav>
@@ -13,7 +13,7 @@ export const Navbar = () => {
                     <Link to="shop">Shop</Link>
                 </li>
                 <li>
-                    <Link to="cart">Cart</Link>
+                    <Link to="cart">Cart { cartProducts > 0 && `(${cartProducts})`}</Link>
                 </li>
             </ul>
         </nav>

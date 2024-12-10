@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar cartProducts={cartProducts.length}/>
       <Outlet context={{products, cartProducts, setCartProducts}}/>
     </>
   )
