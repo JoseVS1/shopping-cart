@@ -8,7 +8,7 @@ export const HomePage = () => {
 
         <p>Discover the Next Generation of Home & Lifestyle Products</p>
 
-        <Link to="shop">Shop Now</Link>
+        <Link className='shop-link' to="shop">Shop Now</Link>
     </div>
   )
 }
