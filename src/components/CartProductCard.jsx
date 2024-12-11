@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { MdDelete } from "react-icons/md";
 
 export const CartProductCard = ({product, removeFromCart}) => {
     const [quantity, setQuantity] = useState(product.quantity);
-    let price = product.price * quantity;
+    let price = (product.price * quantity).toFixed(2);
 
     const incrementQuantity = () => {
         setQuantity(quantity + 1);
@@ -14,16 +15,21 @@ export const CartProductCard = ({product, removeFromCart}) => {
         }
       }
   return (
-    <div className='cart-card'>
+    <>
+      <div className='cart-card'>
         <img src={product.image} alt={product.title} />
         <h2>{product.title}</h2>
         <div>
-            <button onClick={decrementQuantity}>-</button>
-            <span>{quantity}</span>
-            <button onClick={incrementQuantity}>+</button>
-            <button onClick={() => removeFromCart(product)}>Remove</button>
+            <div>
+              <button onClick={decrementQuantity}>-</button>
+              <span>{quantity}</span>
+              <button onClick={incrementQuantity}>+</button>
+            </div>
+            
+            <span id='delete-button' onClick={() => removeFromCart(product)}><MdDelete /></span>
         </div>
-        <span>Price: {price}</span>
-    </div>
+        <span>${price}</span>
+      </div>
+    </>
   )
 }

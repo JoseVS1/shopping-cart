@@ -16,9 +16,9 @@ export const CartPage = () => {
   }
 
   return (
-  <>
+  <div className='cart-body'>
     {hasOrdered ? (
-      <h1>Order submitted!</h1>
+      <h1 className='submitted-heading'>Order submitted!</h1>
     ) : (
       <>
         {cartProducts.map(x => {
@@ -26,13 +26,12 @@ export const CartPage = () => {
         })}
 
         {cartProducts.length > 0 ? (
-          <button onClick={submitOrder}>Submit Order</button>
+          <button className='submit-button' onClick={submitOrder}>Submit Order</button>
         ) : (
-          <h1>Empty cart...</h1>
+          <h1 className='empty-heading'>Cart empty</h1>
         )}
       </>
     )}
-    
-  </>
+  </div>
   )
 }
